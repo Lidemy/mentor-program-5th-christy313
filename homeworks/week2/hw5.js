@@ -9,7 +9,6 @@ function join(arr, concatStr) {
     return ans
 }
 
-
 function repeat(str, times) {
     let ans = ''
     for (var i=1; i<=times; i++) {
