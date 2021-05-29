@@ -2,6 +2,7 @@ const request = require('request')
 const process = require('process')
 
 const action = process.argv[2]
+const API_ENDPOINT = 'https://lidemy-book-store.herokuapp.com'
 
 if (action === 'list') {
   listBook()
@@ -18,7 +19,7 @@ if (action === 'list') {
 }
 
 function listBook() {
-  request('https://lidemy-book-store.herokuapp.com/books?_limit=20',
+  request(`${API_ENDPOINT}/books?_limit=20`,
     (error, response, body) => {
       if (error) {
         console.log('error:', error)
@@ -39,7 +40,7 @@ function listBook() {
 }
 
 function readBook(id) {
-  request('https://lidemy-book-store.herokuapp.com/books/'`${id}`,
+  request(`${API_ENDPOINT}/books/${id}`,
     (error, response, body) => {
       if (error) {
         console.log('error:', error)
@@ -58,7 +59,7 @@ function readBook(id) {
 }
 
 function deleteBook(id) {
-  request.delete('https://lidemy-book-store.herokuapp.com/books/'`${id}`,
+  request.delete(`${API_ENDPOINT}/books/${id}`,
     (error, response, body) => {
       if (error) {
         console.log('error:', error)
@@ -79,7 +80,7 @@ function deleteBook(id) {
 function createBook(name) {
   request.post(
     {
-      url: 'https://lidemy-book-store.herokuapp.com/books/',
+      url: `${API_ENDPOINT}/books`,
       form: {
         id: '',
         name: process.argv[3]
@@ -106,7 +107,7 @@ function createBook(name) {
 function updateBook(id, name) {
   request.patch(
     {
-      url: 'https://lidemy-book-store.herokuapp.com/books/'`${id}`,
+      url: `${API_ENDPOINT}/books/${id}`,
       form: {
         name
       }
