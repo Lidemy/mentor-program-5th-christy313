@@ -24,9 +24,9 @@ request(`https://restcountries.eu/rest/v2/name/${name}`,
 
     for (let i = 0; i < str.length; i++) {
       console.log('============')
-      console.log('國家：'`${str[i].name}`)
-      console.log('首都：'`${str[i].capital}`)
-      console.log('貨幣：'`${str[i].currencies[0].code}`)
-      console.log('國碼：'`${str[i].callingCodes[0]}`)
+      console.log(`國家：${str[i].name}`)
+      console.log(`首都：${str[i].capital}`)
+      console.log(`貨幣：${str[i].currencies[0].code}`)
+      console.log(`國碼：${str[i].callingCodes[0]}`)
     }
   })
