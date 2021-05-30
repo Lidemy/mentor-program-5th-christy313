@@ -2,20 +2,28 @@ const request = require('request')
 const process = require('process')
 
 const action = process.argv[2]
+const params = process.argv[3]
+
 const API_ENDPOINT = 'https://lidemy-book-store.herokuapp.com'
 
-if (action === 'list') {
-  listBook()
-} else if (action === 'read') {
-  readBook(process.argv[3])
-} else if (action === 'delete') {
-  deleteBook(process.argv[3])
-} else if (action === 'create') {
-  createBook(process.argv[3])
-} else if (action === 'update') {
-  updateBook(process.argv[3], process.argv[4])
-} else {
-  console.log('error')
+switch (action) {
+  case 'list':
+    listBook()
+    break
+  case 'read':
+    readBook(params)
+    break
+  case 'delete':
+    deleteBook(params)
+    break
+  case 'create':
+    createBook(params)
+    break
+  case 'update':
+    updateBook(params, process.argv[4])
+    break
+  default:
+    console.log('Available commands: list, read, delete, create and update')
 }
 
 function listBook() {
@@ -54,7 +62,7 @@ function readBook(id) {
         console.log(error)
         return
       }
-      console.log(book)
+      console.log(book.name)
     })
 }
 
@@ -73,7 +81,7 @@ function deleteBook(id) {
         console.log(error)
         return
       }
-      console.log(book)
+      console.log('刪除成功', book)
     })
 }
 
@@ -82,7 +90,6 @@ function createBook(name) {
     {
       url: `${API_ENDPOINT}/books`,
       form: {
-        id: '',
         name: process.argv[3]
       }
     },
@@ -99,7 +106,7 @@ function createBook(name) {
         console.log(error)
         return
       }
-      console.log(book)
+      console.log('新增成功', book)
     }
   )
 }
@@ -126,6 +133,6 @@ function updateBook(id, name) {
         console.log(error)
         return
       }
-      console.log(book)
+      console.log('更新成功', book)
     })
 }
