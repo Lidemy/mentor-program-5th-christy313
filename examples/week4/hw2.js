@@ -1,85 +1,126 @@
 const request = require('request');
-const args = process.argv;
-const API_ENDPOINT = 'https://lidemy-book-store.herokuapp.com';
+const process = require('process')
 
-const action = args[2];
-const params = args[3];
+const action = process.argv[2]
 
-switch(action) {
-  case 'list':
-    listBooks();
-    break;
-  case 'read':
-    readBook(params);
-    break;
-  case 'delete':
-    deleteBook(params);
-    break;
-  case 'create':
-    createBook(params);
-    break;
-  case 'update':
-    updateBook(params, args[4]);
-    break;
-  default:
-    console.log('Available commands: list, read, delete, create and update');
+if (action === 'list') {
+  listBook()
+} else if (action === 'read') {
+  readBook(process.argv[3])
+} else if (action === 'delete') {
+  deleteBook(process.argv[3])
+} else if (action === 'create') {
+  createBook(process.argv[3])
+} else if (action === 'update') {
+  updateBook(process.argv[3], process.argv[4])
+} else {
+  console.log('error')
 }
 
-function listBooks() {
-  request(`${API_ENDPOINT}/books?_limit=20`, (err, res, body) => {
-    if (err) {
-      return console.log('抓取失敗', err);
-    }
-    const data = JSON.parse(body);
-    for (let i = 0; i < data.length; i += 1) {
-      console.log(`${data[i].id} ${data[i].name}`);
-    }
-  })
+function listBook() {
+  request('https://lidemy-book-store.herokuapp.com/books?_limit=20', 
+    function (error, response, body) {
+      if (error) {
+        console.log('error:', error)
+        return 
+      }
+
+      let obj 
+      try {
+        obj = JSON.parse(body)
+      } catch(error) {
+        console.log(error)
+        return
+      }
+      for (let i = 0; i < obj.length; i++) {
+        console.log(`${obj[i].id} ${obj[i].name}`)
+      }    
+    });
 }
 
 function readBook(id) {
-  request(`${API_ENDPOINT}/books/${id}`, (err, res, body) => {
-    if (err) {
-      return console.log('抓取失敗', err);
-    }
-    const data = JSON.parse(body);
-    console.log(data)
-  })
+  request('https://lidemy-book-store.herokuapp.com/books/' + id, 
+    function (error, response, body) {
+      if (error) {
+        console.log('error:', error)
+        return 
+      }
+
+      let book 
+      try {
+        book = JSON.parse(body)
+      } catch(error) {
+        console.log(error)
+        return
+      }
+      console.log(book)
+    });
 }
 
 function deleteBook(id) {
-  request.delete(`${API_ENDPOINT}/books/${id}`, (err, res, body) => {
-    if (err) {
-      return console.log('刪除失敗', err);
+  request.delete('https://lidemy-book-store.herokuapp.com/books/' + id, 
+  function (error, response, body) {
+    if (error) {
+      console.log('error:', error)
+      return 
     }
-    console.log('刪除成功！');
-  })
+
+    let book 
+    try {
+      book = JSON.parse(body)
+    } catch(error) {
+      console.log(error)
+      return
+    }
+    console.log(book)
+  });
 }
 
 function createBook(name) {
-  request.post({
-    url: `${API_ENDPOINT}/books`,
+  request.post({url:'https://lidemy-book-store.herokuapp.com/books/', 
     form: {
-      name
+      id: '',
+      name: process.argv[3]
     }
-  }, (err, res) => {
-    if (err) {
-      return console.log('新增失敗', err);
+  }, 
+    function(error, response, body) {
+      if (error) {
+      console.log('error:', error)
+      return 
     }
-    console.log('新增成功！');
-  })
+
+    let book 
+    try {
+      book = JSON.parse(body)
+    } catch(error) {
+      console.log(error)
+      return
+    }
+    console.log(book)
+    }
+  )
 }
 
 function updateBook(id, name) {
-  request.patch({
-    url: `${API_ENDPOINT}/books/${id}`,
+  request.patch({url:'https://lidemy-book-store.herokuapp.com/books/' + id, 
     form: {
       name
     }
-  }, (err, res) => {
-    if (err) {
-      return console.log('更新失敗', err);
+  }, 
+  
+  function (error, response, body) {
+    if (error) {
+      console.log('error:', error)
+      return 
     }
-    console.log('更新成功！');
-  })
+
+    let book 
+    try {
+      book = JSON.parse(body)
+    } catch(error) {
+      console.log(error)
+      return
+    }
+    console.log(book)
+  });
 }
