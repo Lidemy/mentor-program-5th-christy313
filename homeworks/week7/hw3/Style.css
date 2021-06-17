@@ -1,0 +1,80 @@
+* {
+	box-sizing: border-box;
+}
+
+.wrapper {
+	max-width: 768px;
+	background-color: #76b5c5;
+	margin: 30px auto;
+	padding: 36px;
+	border-radius: 10px;
+}
+
+
+.add {
+	text-align: center;
+}
+
+input {
+	font-family: 'Open Sans', sans-serif;
+	color: #696969;
+	outline: none;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	width: 40%;
+	padding: 6px;
+	margin-right: 8px;
+}
+
+.create {
+	font-family: 'Open Sans', sans-serif;
+	color: #696969;
+	outline: none;
+	padding: 6px;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 72px;
+	font-weight: 400;
+	color: white;
+	text-align: center;
+}
+
+.todo {
+	display: flex;
+	margin-top: 12px;
+	padding: 12px;
+	align-items: center;
+}
+
+.todo:hover {
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+
+.todo-list {
+	flex: 1;
+	color: white;
+}
+
+.check  {
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+}
+
+.delete {
+	font-size: 18px;
+	outline: none;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	color: #76b5c5;
+}
+
+.todo.done .todo-list {
+	text-decoration: line-through;
+}
