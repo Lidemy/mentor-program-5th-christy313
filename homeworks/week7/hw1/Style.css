@@ -1,0 +1,129 @@
+* {
+  font-family: MicrosoftJhengHei;
+  color: #000;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* header start */
+
+.wrapper {
+  background-color: white;
+  box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+  max-width: 645px;
+  border-top: 8px solid #fad312;
+  margin: 5% auto;
+  padding: 32px 48px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.detail {
+  margin-top: 32px;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+label {
+  font-size: 14px;
+}
+
+.note {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e74149;
+  margin-top: 24px;
+}
+
+/* header end */
+
+/* form start */
+
+.fill {
+  margin-top: 60px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 200;
+  margin-top: 48px;
+}
+
+.must h2:after {
+  content: "*";
+  color: #e74149;
+  margin-left: 2px;
+}
+
+input {
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+.fill-error {
+  margin-top: 4px;
+  color: #e74149;
+  position: absolute;
+  font-size: 12px;
+}
+
+.hide-error .fill-error  {
+  visibility: hidden;
+}
+
+/* form end */
+
+/* bottom start */
+
+.submit {
+  margin-top: 60px;
+}
+
+button {
+  background-color: #fad312;
+  border-radius: 4px;
+  border-style: none;
+  padding: 12px 32px;
+  cursor: pointer;
+}
+
+.reminder {
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  background-color: #000;
+  color: #999;
+  font-size: 14px;
+  padding: 24px 12px;
+}
+
+/* bottom end */
+
+/* mobile device */
+
+@media (min-width: 280px) and (min-height: 653px) {
+  .square {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) and (min-height: 1366px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
