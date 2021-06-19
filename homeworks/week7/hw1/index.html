@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lazy Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./Style.css"/>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
+</head>
+
+<body>
+	
+	<div class="wrapper">
+
+		<form>
+
+			<h1>新拖延運動報名表單</h1>
+
+			<div class="detail">
+				<h4>
+					活動日期：2020/12/10 ~ 2020/12/11
+				</h4>
+				<h4>
+					活動地點：台北市大安區新生南路二段1號
+				</h4>
+			</div>
+
+			<div class="note">
+				* 必填
+			</div>
+
+			<div class="fill must hide-error">
+				<h2 class="subject">
+					暱稱
+				</h2>
+				<div class="fill-data">
+					<input name="nickname" type="text" placeholder="您的回答">
+				</div>
+				<div class="fill-error">內容忘了填唷</div>
+			</div> <!-- 暱稱 fill must hide-error -->
+
+			<div class="fill must hide-error">
+				<h2 class="subject">
+					電子郵件
+				</h2>
+				<div class="fill-data">
+					<input name="email" type="text" placeholder="您的電子郵件">
+				</div>
+				<div class="fill-error">內容忘了填唷</div>
+			</div> <!-- fill must hide-error -->
+
+			<div class="fill must hide-error">
+				<h2 class="subject">
+					手機號碼
+				</h2>
+				<div class="fill-data">
+					<input name="mobile" type="text" placeholder="0912-345-678">
+				</div>
+				<div class="fill-error">內容忘了填唷</div>
+			</div> <!-- 手機號碼 fill must hide-error -->
+
+			<div class="fill must hide-error">
+				<h2 class="subject">
+					報名類型
+				</h2>
+
+				<div class="fill-data">
+					<div>
+						<label for="bed"><input type="radio" value="躺在床上用想像力實作" name="register" id="bed"/> 躺在床上用想像力實作</label>
+					</div><br>
+					<div>
+						<label for="ground"><input type="radio" value="趴在地上滑手機找現成的" name="register" id="ground"/> 趴在地上滑手機找現成的</label>
+					</div>
+				</div>
+				<div class="fill-error">內容忘了填唷</div>
+			</div> <!-- 報名類型 fill must hide-error -->
+
+
+			<div class="fill must hide-error">
+				<h2 class="subject">怎麼知道這個活動的？</h2>
+
+				<div class="fill-data">
+					<input name="discover" type="text" placeholder="您的回答">
+				</div>
+
+				<div class="fill-error">內容忘了填唷</div>
+			</div> <!-- 活動 fill must hide-error -->
+
+			<div class="fill">
+				<h2>其他</h2>
+				<h4>對活動的一些建議</h4>
+
+				<div class="fill-data">
+					<input name="suggestion" type="text" placeholder="您的回答">
+				</div>
+			</div>
+
+			<div class="submit">
+				<button>提交</button>
+				<h4 class="reminder">請勿透過表單送出您的密碼。</h4>	
+			</div>	
+
+		</form>
+
+	</div> <!-- wrapper -->
+
+	<footer>© 2020 © Copyright. All rights Reserved.</footer>
+
+	<script src="./Script.js"></script>
+</body>
+</html>
