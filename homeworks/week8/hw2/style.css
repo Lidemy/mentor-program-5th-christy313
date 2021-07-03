@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	font-family: Roboto;
+	font-size: 12px;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.logo {
+	margin-left: 20px;
+	padding: 10px;
+	font-size: 2em;
+	line-height: 1.2em;
+	cursor: pointer;
+}
+
+ul {
+	display: flex;
+	list-style: none;
+}
+
+li {
+	margin-right: 20px;
+	padding: 3px;
+	font-size: 1.5em;
+	line-height: 2.4em;
+	text-decoration: none;
+	color: black;
+}
+
+li:hover {
+	background: #ccc;
+	padding: 6px;
+	color: white;
+}
+
+main {
+	background: linear-gradient(#666, #000) center/cover no-repeat;
+}
+
+.games {
+  padding: 50px 0px;
+  color: white;
+}
+
+h1 {
+	font-size: 4em;
+	padding: 20px;
+}
+
+p {
+	font-size: 2.4em;
+	padding: 10px;
+	margin-bottom: 48px;
+}
+
+h1, p {
+	color: white;
+	text-align: center;
+}
+
+.cards {
+	display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+	max-width: 20vw;
+	margin: 8px;
+	border-radius: 5px;
+	background-color: #999;
+}
+
+.card > img {
+	width: 100%;
+}
+
+.card-des {
+	display: inline-flex;
+	align-items: center;
+	padding: 6px;
+	max-width: 20vw;
+}
+
+.card-avatar > img {
+	border-radius: 50%;
+	width: 64px;
+	height: 64px;
+	min-width: 64px;
+	margin-left: 10px;
+}
+
+.card-intro {
+	text-align: left;
+	margin-left: 1em;
+	width: 20vw;
+}
+
+.card-title {
+	font-size: 1.6em;
+  letter-spacing: 0.1em;
+  width: 14em;
+  white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.card-gamer {
+	font-size: 1.4em;
+	margin-top: 0.4em;
+}
