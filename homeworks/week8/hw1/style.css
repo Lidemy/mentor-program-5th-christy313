@@ -1,0 +1,391 @@
+* {
+  box-sizing: border-box;
+} 
+
+body {
+  font-family: 'MicrosoftJhengHei';
+}
+
+
+/* header start */
+
+.wrapper {
+  max-width: 1280px;
+  margin: auto;
+  height: auto;
+  padding: 0 12px;
+}
+
+.navbar .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  padding: 20px 20px;
+}
+
+.logo {
+  color: #489846;
+  font-size: 36px; 
+  font-family: Questrial;
+  font-weight: 300;
+}
+
+.navbar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+}
+
+.navbar__list li {
+  margin-left: 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease-in;
+}
+
+.navbar__list li.active, .navbar__list li:hover {
+  background: #ff7286;
+}
+
+.navbar__list li.active a, .navbar__list li:hover a {
+  color: white;
+}
+
+.navbar__list li a {
+  text-decoration: none;
+  color: black;
+  padding: 16px;
+  display: block;
+}
+
+/* header end */
+
+/*draw page start */
+
+.draw {
+  background: url(./img/games-bn.jpg) center/cover no-repeat;
+  height: 660px;
+}
+
+.draw__content {
+  background-color: white;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  height: 560px;
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.draw__title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #5ec1b6;
+  margin-bottom: 3vh;
+}
+
+.draw__schedule, .draw__explanation, .draw__prize {
+  display: flex;
+  font-size: 16px;
+  border-bottom: 1px solid #cdcdcd;
+  margin: 8px 0;
+  padding: 10px 0;
+  padding-bottom: 20px;
+}
+
+.draw__duration, .draw__des, .draw__prize-title {
+  width: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #322929;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+.draw__time, .draw__des-content, .draw__prize-content {
+  /*width: 15vw; RWD 就卡在這裡調半天*/
+  font-size: 16px;
+  color: #322929;
+  line-height: 1.4em;
+  text-align: justify;
+  flex: 1;
+}
+
+.draw__btn {
+  width: 80%;
+  padding: 16px 0;
+  background-color: #e62a45;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  margin: 8px auto;
+}
+
+.hide {
+  display: none;
+}
+
+/*draw page end*/
+
+
+/*prize start*/
+
+/*.prize {
+  background: url(./img/first-prize.jpg) center/cover no-repeat;
+  height: 660px;
+}*/
+
+
+.draw.first-prize {
+  background: url(./img/first-prize.jpg) center/cover no-repeat;
+  /*height: 660px;*/
+}
+
+.draw.second-prize {
+  background: url(./img/second-prize.jpg) center/cover no-repeat;
+  /*height: 660px;*/
+}
+
+.draw.third-prize {
+  background: url(./img/third-prize.jpg) center/cover no-repeat;
+  /*height: 660px;*/
+}
+
+.draw.none-prize {
+  background: #666;
+  color: white;
+  height: 660px;
+}
+
+.prize__des {
+  position: relative;
+  max-width: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.prize__title {
+  font-size: 36px;
+  font-weight: 500;
+  color: white;
+}
+
+.prize__btn {
+  background-color: #e62a45;
+  padding: 2vh 2.8vw;
+  border-radius: 8px;
+  margin-top: 6vh;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/*first prize end*/
+
+/* footer start */
+
+.footer__top {
+  background: #e8efee;
+  padding: 32px;
+  color: #484848;
+}
+
+.footer__top .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__info {
+  margin-right: 16px;
+}
+
+.footer__info div + div {
+  margin-top: 10px;
+}
+
+.social__medias {
+  font-size: 36px;
+  color: #489846;
+  margin-bottom: 5px;
+  font-family: Questrial;
+  font-weight: 300;
+}
+
+.footer__right {
+  text-align: right;
+  font-family: Questrial;
+  font-weight: 300;
+}
+
+.footer__right a {
+  text-decoration: none;
+  color: #484848;
+}
+
+.copyright {
+  background: #35564b;
+  padding: 12px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+
+/* footer end */
+
+
+/* mobile device */
+
+@media(max-width: 768px) {
+
+  .logo {
+    margin-bottom: 5px;
+  }
+
+  .navbar .wrapper {
+    height: 108px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .navbar__list {
+    display: flex;
+    width: 100%;
+    margin-top: 5px 0;
+  }
+
+  .navbar__list li {
+    flex: 1;
+    margin-left: 0;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .navbar__list li.active, .navbar__list li:hover {
+    background: #ff7286;
+  }
+
+  .btn-query {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu div {
+    width: 100%;
+  }
+
+  .comments {
+    flex-direction: column;
+  }
+
+  .review + .review {
+    margin-left: 0;
+    margin-top: 72px;
+  }
+
+  .review {
+    width: auto;
+    height: auto;
+  }
+
+  .footer__top .wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .footer__info {
+    margin-right: 0;
+    margin-top: 16px;
+  }
+
+  .footer__right {
+    text-align: left;
+    font-family: Questrial;
+    font-weight: 300;
+  }
+
+}
+
+@media(max-width: 320px) and (min-height: 680px) {
+  .navbar .wrapper {
+    margin-bottom: 5vh;
+  }
+}
+
+@media(min-width: 320px) and (max-height: 1024px) {
+  .q-block--hide, h2 {
+    height: 8.8vh;
+  }
+
+  .navbar .wrapper {
+    margin-bottom: 5vh; 
+  }
+}
+
+@media(min-width: 1024px) {
+  .q-block--hide, h2 {
+    height: 5vh;
+  }
+}
+
+@media (max-width: 280px) {
+  .navbar .wrapper {
+    margin-bottom: 5vh; 
+  }
+
+  .draw__duration, .draw__des, .draw__prize-title {
+    width: 30vw;
+    font-size: 14px;
+  }
+
+  .draw__time, .draw__des-content, .draw__prize-content {
+    width: 40vw; 
+    font-size: 14px;
+  }
+
+  .draw__content {
+    height: 580px;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 320px) {
+  .draw__content {
+    height: 600px;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 425px) {
+  .draw__content {
+    height: 510px;
+    border-radius: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .draw__content {
+    height: 460px;
+    border-radius: 16px;
+  }
+}
