@@ -13,14 +13,20 @@ body {
 nav {
 	display: flex;
 	justify-content: space-between;
-
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: white;
+	text-align: center;
+	padding: 1.2em;
+	height: auto;
+	line-height: 1.4em;
 }
 
 .logo {
-	margin-left: 20px;
-	padding: 10px;
-	font-size: 2em;
-	line-height: 1.2em;
+	margin-left: 0.6em;
+	font-size: 1.2em;
 	cursor: pointer;
 }
 
@@ -30,44 +36,44 @@ ul {
 }
 
 li {
-	margin-right: 20px;
-	padding: 3px;
-	font-size: 1.5em;
-	line-height: 2.4em;
+	font-size: 1.2em;
 	text-decoration: none;
 	color: black;
+	margin-left: 1.2em ;
 }
 
 li:hover {
 	background: #ccc;
-	padding: 6px;
 	color: white;
 }
 
 main {
 	background: linear-gradient(#666, #000) center/cover no-repeat;
+	margin-top: 4em;
 }
 
 .games {
-  padding: 50px 0px;
+  padding: 4.2em 0;
   color: white;
-}
-
-h1 {
-	font-size: 4em;
-	padding: 20px;
-}
-
-p {
-	font-size: 2.4em;
-	padding: 10px;
-	margin-bottom: 48px;
+  max-width: 768px;
 }
 
 h1, p {
 	color: white;
 	text-align: center;
 }
+
+h1 {
+	font-size: 4em;
+	padding: 1em;
+}
+
+p {
+	font-size: 2.4em;
+	padding: 0.8em;
+	margin-bottom: 1em;
+}
+
 
 .cards {
 	display: inline-flex;
@@ -76,9 +82,9 @@ h1, p {
 }
 
 .card {
-	max-width: 20vw;
-	margin: 8px;
-	border-radius: 5px;
+	max-width: 40vw;
+	margin: 0.6em;
+	border-radius: 0.6em;
 	background-color: #999;
 }
 
@@ -89,34 +95,105 @@ h1, p {
 .card-des {
 	display: inline-flex;
 	align-items: center;
-	padding: 6px;
-	max-width: 20vw;
+	padding: 0.4em;
 }
 
 .card-avatar > img {
 	border-radius: 50%;
-	width: 64px;
-	height: 64px;
-	min-width: 64px;
-	margin-left: 10px;
+	width: 5em;
+	height: 5em;
+	min-width: 5em;
+	margin-left: 0.2em;
 }
 
 .card-intro {
 	text-align: left;
-	margin-left: 1em;
-	width: 20vw;
+	margin-left: 0.8em;
+	max-width: 26vw;
 }
 
 .card-title {
-	font-size: 1.6em;
-  letter-spacing: 0.1em;
-  width: 14em;
+	font-size: 1.2em;
+  letter-spacing: 0.06em;
   white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
 .card-gamer {
-	font-size: 1.4em;
+	font-size: 1em;
 	margin-top: 0.4em;
+}
+
+
+@media only screen and (max-width: 680px) and (min-width: 425px){
+	.card {
+		max-width: 80vw;
+		margin: 0.6em;
+		border-radius: 0.6em;
+		background-color: #999;
+	}
+
+	.card-intro {
+		text-align: left;
+		margin-left: 0.8em;
+		max-width: 60vw;
+	}
+
+	.logo, li {
+		margin-left: 0.6em;
+		padding: 0.8em;
+		font-size: 0.6em;
+	}
+}
+
+@media only screen and (max-width: 420px) and (min-width: 280px) {
+
+	nav {
+		text-align: start;
+	}
+
+	nav, ul {
+		display: inline-block;
+		line-height: 2.4em;
+		margin: 0;
+	}
+
+	.logo, li {
+		padding: 0.6em;
+		font-size: 1em;
+	}
+
+	main {
+		margin-top: 24em;
+	}
+
+	.card-intro {
+		max-width: 56vw;
+	}
+
+	.card {
+		max-width: 80vw;
+	}
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 769px) {
+	.games {
+	  max-width: 1440px;
+	  padding: 2.5em;
+	}
+
+	.card {
+		max-width: 24vw;
+	}
+
+	.card-intro {
+		max-width: 18vw;
+	}
+
+	li:hover {
+		background: #ccc;
+		color: white;
+		padding: 0.2em;
+	}
 }
