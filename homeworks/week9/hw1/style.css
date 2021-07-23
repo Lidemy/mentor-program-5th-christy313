@@ -1,0 +1,179 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	font-family: sans-serif;
+	background-color: #f7f7f7;
+	font-size: 12px;
+}
+
+.warning {
+	background-color: #FE5F55;
+	color: #f7f7f7;
+	font-size: 2rem;
+	text-align: center;
+	padding: 0.5rem;
+	width: 100%;
+	min-width: 768px;
+}
+
+nav {
+	background-color: white;
+	height: 4rem;
+	justify-content: space-between;
+	display: flex;
+	width: 100%;
+	min-width: 768px;
+}
+
+img {
+	height: 4rem;
+	line-height: 2rem;
+	margin-left: 2rem;
+}
+
+.member-btn {
+	display: inline-flex;
+	margin: 1rem;
+	margin-right: 2rem;	
+	width: 100%;
+	max-width: 20rem;
+}
+
+.login-btn, .signup-btn, .logout-btn {
+	background-color: #0C6291;
+	color: white;
+	font-size: 1rem;
+	text-decoration: none;
+	line-height: 1.2rem;
+	text-align: center;
+	margin-right: 1rem;
+	padding: 0.4rem;
+	border-radius: 12rem;
+	max-width: 8rem;
+	width: 100%;
+}
+
+h2 {
+	text-align: left;
+	padding: 1.2rem;
+	line-height: 2.4rem;
+	font-size: 2rem;
+	font-weight: 300;
+	color: #666;
+	word-break: break-word;
+	white-space: pre-line;
+}
+
+.error {
+	color: #FE5F55;
+	font-weight: 400;
+	font-size: 2rem;
+}
+
+.post-username {
+	margin: 1rem;
+}
+
+h1 {
+	text-align: left;
+	margin-bottom: 1rem;
+	font-weight: 300;
+	font-size: 3rem;
+}
+
+.bulletin {
+	width: 100%;
+	min-width: 768px;
+	margin: 1rem auto;
+}
+
+.post {
+	background-color: #FAFAFA;
+	width: 100%;
+	max-width: 32rem;
+	margin: 1rem auto;
+	padding: 3rem;
+	border-radius: 0.5rem;
+}
+
+.comment {
+	max-width: 32rem;
+	background: white;
+	margin: 1rem auto;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	display: flex;
+}
+
+button {
+	font-family: sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	color: white;
+	background-color: #0C6291;
+	border: white;
+	border-radius: 0.2rem;
+	padding: 0.5rem;
+}
+
+.comment__avatar {
+	width: 4.8rem;
+	height: 4.8rem;
+	min-width: 4.8rem;
+	border-radius: 50%;
+	background-color: #0C6291;
+}
+
+.comment__info {
+	margin-left: 1rem;
+}
+
+.comment__data {
+	display: flex;
+}
+
+.comment__user {
+	max-width: 14rem;
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #333;
+  margin-right: 1rem;
+}
+
+.comment__time {
+	font-size: 0.8rem;
+	line-height: 2rem;
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.comment__cotent {
+	font-size: 1rem;
+	font-weight: 300;
+	word-break: break-all;
+	white-space: pre-line;
+}
+
+.Signup {
+	background-color: #eee;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	font-size: 1.2rem;
+	font-weight: 300;
+}
+
+.signup-username, .signup-password {
+	margin-top: 1rem;
+	width: 10rem;
+}
+
+.submit {
+	margin-top: 0.5rem;
+}
