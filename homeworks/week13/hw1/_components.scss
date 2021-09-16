@@ -1,0 +1,11 @@
+@import '_mixins';
+@import '_variables';
+
+.btn-read-more {
+  display: inline-block;
+  padding: 12px 16px;
+  @extend %border;
+  color: $grey;
+  margin-top: 36px;
+  text-decoration: none;
+}
