@@ -1,0 +1,197 @@
+@import '_variables';
+@import '_layouts';
+@import '_components';
+@import '_mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0px 12px;
+}
+
+.container-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 138px;
+  min-height: calc(100vh - 350px);
+}
+
+.posts, .container {
+  background: #fff;
+  padding: 6px;
+  display: inline-flex;
+  margin: 0 auto;
+  margin-top: -30px;
+  flex-direction: column;
+}
+
+.post {
+  & {
+    width: 900px;
+    padding: 30px;
+    @extend %border;
+  }
+  & + & {
+    margin-top: 24px;
+  }
+
+  &__header {
+    font-size: $h5;
+    @include flex-center;
+    justify-content: space-between;
+  }
+
+  &__action {
+    padding: 3px 12px;
+    @extend %border;
+    color: $grey;
+    text-decoration: none;
+    font-size: $p;
+  }
+  
+  &__info {
+    margin-top: 19px;
+    padding: 12px 22px;
+    background: $light-grey;
+  }
+  
+  &__content {
+    margin-top: 17px;
+    line-height: 1.5em;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+.login-wrapper {
+  & {
+    margin: 0 auto;
+    border: solid 1px #000;
+    width: 527px;
+    flex-direction: column;
+    @include flex-center;
+    padding: 62px 72px;
+    margin-top: -30px;
+    background: #fff;
+  }
+  
+  & form {
+    width: 100%;
+  }
+
+  & input {
+    width: 100%;
+
+    &[type=submit] {
+      height: 56px;
+      background-image: linear-gradient(to top, #000, $dark-grey);
+      color: #fff;
+      margin-top: 73px;
+    }
+  }
+  
+  & h2 {
+    font-size: $h2;
+    font-weight: normal;
+  }
+}
+
+.input {
+  &__field {
+    margin-top: 16px;
+    height: 40px;
+  }
+
+  &__wrapper + &__wrapper {
+    margin-top: 23px;
+  }
+
+  &__label {
+    font-size: $p;
+    margin-left: 21px;
+  }
+}
+
+.edit-post {
+  & {
+    width: 900px;
+    padding: 30px;
+    @extend %border;
+  }
+  &__title {
+    font-size: $h4;
+  }
+
+  &__input-wrapper {
+    width: 100%;
+    margin-top: 28px;
+
+    & input, & textarea {
+      width: 100%;
+      padding: 6px;
+    }
+  }
+
+  &__btn-wrapper {
+    text-align: right;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 10px 20px;
+    @extend %border;
+    color: $grey;
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+}
+
+.admin-post {
+  & {
+    padding: 24px 0px;
+    justify-content: space-between;
+    @include flex-center;
+    border-bottom: 1px solid $grey;
+    font-size: $p;
+    width: 920px;
+  }
+
+  &__title {
+    font-size: $h5;
+    margin-left: 16px;
+  }
+  
+  &__info {
+    @include flex-center;
+    margin-left: 12px;
+  }
+  
+  &__created-at {
+    color: $grey;
+  }
+  
+  &__btn {
+    padding: 4px 8px;
+    @extend %border;
+    color: $grey;
+    cursor: pointer;
+    margin-left: 8px;
+    text-decoration: none;
+
+    &:last-child {
+      margin-right: 16px;
+    }
+  }
+}
+
+.error {
+  font-size: $h3;
+  font-family: sans-serif;
+  color: $red;
+  margin: 20px 0;
+}

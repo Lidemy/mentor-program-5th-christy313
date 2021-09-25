@@ -1,0 +1,10 @@
+@import '_variables';
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+%border {
+  border: solid 1px $grey;
+}
