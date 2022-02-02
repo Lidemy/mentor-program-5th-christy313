@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light container-fluid">
+  <a class="navbar-brand fs-3" href="/">Let's draw!</a>
+  <div>
+    <% if (username) { %>
+      <a class="btn btn-outline-dark" href="/cms">CMS</a>
+      <a class="btn btn-outline-dark" href="/add">New Prize</a>
+      <a class="btn btn-outline-danger" href="/logout">Logout</a>
+    <% } else { %>
+      <a class="btn btn-outline-dark" href="/login">Login</a>
+    <% } %>
+  </div>
+</nav>
