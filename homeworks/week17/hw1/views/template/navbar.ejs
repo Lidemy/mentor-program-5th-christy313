@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-light"></nav>
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand fs-3" href="/">Blog</a>
+      <ul class="nav">
+        <% if (username) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/new-post">New Post</a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+    <div>
+      <% if (username) { %>
+        <a class="btn btn-outline-danger" href="/logout">Logout</a>
+      <% } else { %>
+        <a class="btn btn-outline-dark" href="/login">Login</a>
+      <% } %>
+    </div>
+  </div>
+</nav>
