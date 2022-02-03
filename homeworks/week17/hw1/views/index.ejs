@@ -1,0 +1,31 @@
+<!doctype html>
+  <head>
+    <%- include('template/head') %>
+  </head>
+<html>
+  <%- include('template/navbar')%>
+  <div class="container mx-auto" style="width:800px;">
+    <% articles.forEach(function(article) { %>
+      <div class="card my-3 border-2">
+        <div class="card-body">
+          <div>
+            <h4 class="card-title fw-light"><%= article.title %></h4>
+            <p class="fw-light" style="font-size:8px;">Posted by: 
+              <%= new Date(article.createdAt).toISOString()
+                .replace(/T/, ' ').replace(/\..+/, '') %>
+            </p>
+          </div>
+          <p class="card-text fs-6"><%= article.content %></p>
+          <% if (username) { %>
+            <a href="delete_article/<%= article.id %>" class="card-link text-decoration-none">
+              Delete
+            </a>
+            <a href="edit_article/<%= article.id %>" class="card-link text-decoration-none">
+              Edit
+            </a>
+          <% } %>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</html>

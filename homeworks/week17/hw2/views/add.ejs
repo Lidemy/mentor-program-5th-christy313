@@ -1,0 +1,39 @@
+<!doctype html>
+  <head>
+    <%- include('template/head') %>
+  </head>
+<html>
+  <%- include('template/navbar')%>
+  <div class="container">
+    <% if (errorMessage.length > 0) { %>
+      <div class="alert alert-danger mt-3" role="alert">
+        <h5><%= errorMessage %></h5>
+      </div>
+    <% } %>
+  </div>
+  <% if (username) { %>
+    <form action="/add" method="POST">
+      <div class="container-fluid mt-5" style="width:1200px;">
+        <div class="input-group mx-auto" style="width:600px;">
+          <span class="input-group-text" style="width:85px;">Item</span>
+          <input name="item" type="text" class="form-control" placeholder="item name">
+        </div>
+        <div class="input-group mx-auto" style="width:600px;">
+          <span class="input-group-text" style="width:85px;">Content</span>
+          <input name="content" type="text" class="form-control" placeholder="description">
+        </div>
+        <div class="input-group mx-auto" style="width:600px;">
+          <span class="input-group-text" style="width:85px;">Url</span>
+          <input name="url" type="text" class="form-control" placeholder="url">
+        </div>
+        <div class="input-group mx-auto" style="width:600px;">
+          <span class="input-group-text" style="width:85px;">Ratio</span>
+          <input name="ratio" type="text" class="form-control" placeholder="ratio for 1 to 100 only">
+        </div>
+        <div class="d-grid justify-content-center">
+          <button type="submit" class="my-2 btn btn-primary">Add</button>
+        </div>
+      </div>
+    </form>
+  <% } %>  
+</html>
