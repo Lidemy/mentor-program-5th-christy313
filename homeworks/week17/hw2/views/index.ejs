@@ -1,0 +1,33 @@
+<!doctype html>
+  <head>
+    <%- include('template/head') %>
+  </head>
+<html>
+  <body>
+    <%- include('template/navbar')%>
+      <div class="wrapper">
+        <div class="card mt-3 mx-auto d-block px-3 py-3" style="max-width: 22rem;background-color: #96C5B0;">
+          <h3 class="card-header text-center border-bottom-1 border-light">Let's draw!</h3>
+          <div class="card-body">
+            <p class="card-text">First Prize: MacBook 15'</p>
+            <p class="card-text">Second Prize: iPhone 13</p>
+            <p class="card-text">Third Prize: Bicycle</p>
+            <p class="card-text">Fourth Prize: Movie tickets</p>
+          </div>
+        </div>
+        <% prizes.forEach(function(prize) { %>
+          <div class="d-none">
+            <div class="text-center">
+              <h3 class="mt-3"><%= prize.item %></h3>
+              <p><%= prize.content %></p>
+            </div>
+            <img class="w-50 rounded mx-auto d-block img-fluid" src="<%= prize.url %>">
+          </div>
+        <% }) %>
+      </div>
+    <div class="mt-2 text-center">
+      <button class="draw-btn btn border-1 border-dark mb-3">Draw!</button>
+    </div>
+    <script src="/api.js"></script>
+  </body>
+</html>
