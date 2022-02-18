@@ -1,0 +1,41 @@
+<!doctype html>
+  <head>
+    <%- include('../template/head') %>
+  </head>
+<html>
+  <%- include('../template/navbar') %>
+  <% if (username === 'admin') { %>
+    <div class="container">
+      <div class="btn fs-4 my-2">
+        <a href="/cms/add-faq" class="text-decoration-none">Add</a>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Sequence</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">management</th>
+          </tr>
+        </thead>
+        <% questions.forEach(function(question) { %>
+          <tbody>
+            <tr>
+              <td class="text-center"><%= question.sequence %></td>
+              <td><%= question.title %></td>
+              <td><%= question.content %></td>
+              <% if (username) { %>
+                <td>
+                  <div class="d-flex">
+                    <a href="edit-faq/<%= question.id %>"class="me-3 text-decoration-none">Edit</a>
+                    <a href="delete-faq/<%= question.id %>" class="text-decoration-none">Delete</a>
+                  </div>
+                </td>
+              <% } %>
+            </tr>
+          </tbody>
+        <% }) %>
+      </table>
+    </div>
+  <% } %>
+</html>

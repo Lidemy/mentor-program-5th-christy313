@@ -1,0 +1,35 @@
+<!doctype html>
+  <head>
+    <%- include('../template/head') %>
+  </head>
+<html>
+  <%- include('../template/navbar') %>
+  <div class="container">
+    <% if (errorMessage.length > 0) { %>
+      <div class="alert alert-danger mt-3" role="alert">
+        <h5><%= errorMessage %></h5>
+      </div>
+    <% } %>
+  </div>
+  <% if (username === 'admin') { %>
+    <form action="/cms/edit-faq/<%= question.id %>" method="POST">
+      <div class="container-fluid mt-5 mx-auto align-items-center justify-content-center" style="width:1200px;">
+        <div class="input-group mx-auto" style="width:600px;">
+          <span class="input-group-text" style="width:100px;">Sequence</span>
+          <input name="sequence" type="text" class="form-control" value="<%= question.sequence %>">
+        </div>
+        <div class="input-group mx-auto" style="width:600px;">
+          <span class="input-group-text" style="width:100px;">Title</span>
+          <input name="title" type="text" class="form-control" value="<%= question.title %>">
+        </div>
+        <div class="input-group mx-auto" style="width:600px;">
+          <span class="input-group-text" style="width:100px;">Content</span>
+          <input name="content" type="text" class="form-control" value="<%= question.content %>">
+        </div>
+        <div class="d-grid justify-content-center">
+          <button type="submit" class="my-2 btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  <% } %>
+</html>

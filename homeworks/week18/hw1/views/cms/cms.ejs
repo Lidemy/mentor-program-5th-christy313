@@ -1,0 +1,19 @@
+<!doctype html>
+  <head>
+    <%- include('../template/head') %>
+  </head>
+<html>
+  <body>
+    <%- include('../template/navbar') %>
+    <% if (username === 'admin') { %>
+      <div class="container" style="margin:auto 180px;">
+        <div class="buttons my-5">
+          <div class="button"><a href="/cms/prize">Prize</a></div>
+          <div class="button"><a href="/cms/menu">Menu</a></div>
+          <div class="button"><a href="/cms/order">Order</a></div>
+          <div class="button"><a href="/cms/faq">FAQ</a></div>
+        </div>
+      </div>
+    <% } %>
+  </body>
+</html>
