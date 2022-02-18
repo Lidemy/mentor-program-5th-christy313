@@ -1,0 +1,27 @@
+<!doctype html>
+  <head>
+    <%- include('template/head') %>
+  </head>
+<html>
+  <body>
+    <%- include('template/navbar') %>
+    <div class="wrapper">
+      <section class="section">
+        <title>FAQ</title>
+      </section>
+      <div class="questions">
+        <% questions.forEach(function(question) { %>
+          <div class="q-block q-block--hide">
+            <div class="q-number"><%= question.sequence %></div>
+            <div class="q-content">
+              <h2><%= question.title %></h2>
+              <p><%= question.content %></p>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    <script src="/script/question.js"></script> 
+    <%- include('template/footer')%>
+  </body>
+</html>

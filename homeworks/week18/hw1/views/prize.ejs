@@ -1,0 +1,46 @@
+<!doctype html>
+  <head>
+    <%- include('template/head') %>
+  </head>
+<html>
+  <body>
+    <%- include('template/navbar') %>
+    <div class="draw">
+      <div class="draw__content">
+        <div class="draw__title">
+          Let's draw for 2022!
+        </div>
+        <div class="draw__schedule">
+          <div class="draw__duration">
+            Date:
+          </div>
+          <div class="draw__time">
+            2022/06/01 - 2022/07/01
+          </div>
+        </div>
+        <div class="draw__explanation">
+          <div class="draw__des">
+            Details:
+          </div>
+          <div class="draw__des-content">
+            If you spent more than $100,000, 
+            you will have the change to get below prizes!
+          </div>
+        </div>
+        <div class="draw__prize">
+          <div class="draw__prize-title">
+            Prize:
+          </div>
+          <div class="draw__prize-content">
+            <% prizes.forEach(function(prize) { %>
+              <div>❤ <%= `${prize.item}: ${prize.content}` %></div>
+            <% }) %>
+          </div>
+        </div>
+        <button class="draw__btn">Draw</button>
+      </div>
+    </div>
+    <%- include('template/footer')%>
+    <script src="/script/api.js"></script> 
+  </body>
+</html>
