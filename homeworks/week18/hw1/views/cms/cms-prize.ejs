@@ -1,0 +1,43 @@
+<!doctype html>
+  <head>
+    <%- include('../template/head') %>
+  </head>
+<html>
+  <%- include('../template/navbar') %>
+  <% if (username === 'admin') { %>
+    <div class="container">
+      <div class="btn fs-4 my-2 text-center">
+        <a href="/cms/add-prize" class="text-decoration-none">Add</a>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item</th>
+            <th scope="col">content</th>
+            <th scope="col">Url</th>
+            <th scope="col">ratio</th>
+            <th scope="col">management</th>
+          </tr>
+        </thead>
+        <% prizes.forEach(function(prize) { %>
+          <tbody>
+            <tr>
+              <th scope="row"><%= prize.id %></th>
+              <td><%= prize.item %></td>
+              <td><%= prize.content %></td>
+              <td><%= prize.url %></td>
+              <td><%= prize.ratio %></td>
+              <td>
+                <div class="d-flex">
+                  <a href="edit-prize/<%= prize.id %>"class="me-3 text-decoration-none">Edit</a>
+                  <a href="delete-prize/<%= prize.id %>" class="text-decoration-none">Delete</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        <% }) %>
+      </table>
+    </div>
+  <% } %>
+</html>
