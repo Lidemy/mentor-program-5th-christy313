@@ -1,0 +1,45 @@
+<!doctype html>
+  <head>
+    <%- include('../template/head') %>
+  </head>
+<html>
+  <%- include('../template/navbar') %>
+  <% if (username === 'admin') { %>
+    <div class="container">
+      <div class="btn fs-4 my-2 text-center">
+        <a href="/cms/add-menu" class="text-decoration-none">Add</a>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item</th>
+            <th scope="col">Price</th>
+            <th scope="col">Photo</th>
+            <% if (username) { %>
+              <th scope="col">management</th>
+            <% } %>
+          </tr>
+        </thead>
+        <% menus.forEach(function(menu) { %>
+          <tbody>
+            <tr>
+              <th scope="row"><%= menu.id %></th>
+              <td><%= menu.item %></td>
+              <td><%= menu.price %></td>
+              <td><%= menu.photo %></td>
+              <% if (username) { %>
+                <td>
+                  <div class="d-flex">
+                    <a href="edit-menu/<%= menu.id %>"class="me-3 text-decoration-none">Edit</a>
+                    <a href="delete-menu/<%= menu.id %>" class="text-decoration-none">Delete</a>
+                  </div>
+                </td>
+              <% } %>
+            </tr>
+          </tbody>
+        <% }) %>
+      </table>
+    </div>
+  <% } %>
+</html>
